@@ -9,4 +9,5 @@ sock.bind((SERVER_IP, SERVER_PORT))
 
 while True:
     data, addr = sock.recvfrom(1024)
-    print('recieved message: ' + data)
+    print('Recieved message: ' + data.decode('utf8'))
+    print('From: ' + addr[0] + ':' + str(addr[1]))
