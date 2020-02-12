@@ -37,12 +37,15 @@ def send_ack_to_client(packets_accepted, client_addr):
     sock.sendto(packet, client_addr)
 
 
-addr = ('127.0.0.1', 12345)
+input_port = int(input('Listening port: '), 10)
+
+addr = ('127.0.0.1', input_port)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 sock.bind(addr)
 
+print('Starting server...')
 info = accept_packets()
 client_addr = info[0]
 packets_accepted = info[1]
