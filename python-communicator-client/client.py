@@ -44,6 +44,7 @@ if len(input_message) > input_size:
     send_ack('', 0, input_ip, input_port)
 else:
     send_packet(input_message, input_size, input_ip, input_port)
+    send_ack('', 0, input_ip, input_port)
 
 data, addr = sock.recvfrom(1518)
 server_recieved_packets = int.from_bytes(data[4:], byteorder='big')

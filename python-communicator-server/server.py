@@ -39,7 +39,7 @@ def send_ack_to_client(packets_accepted, client_addr):
 
 input_port = int(input('Listening port: '), 10)
 
-addr = ('127.0.0.1', input_port)
+addr = ('0.0.0.0', input_port)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
